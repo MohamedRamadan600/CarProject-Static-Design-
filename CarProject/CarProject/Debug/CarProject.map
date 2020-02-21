@@ -73,7 +73,6 @@ Discarded input sections
  .text          0x00000000        0x0 ECUAL/source files/ICU.o
  .data          0x00000000        0x0 ECUAL/source files/ICU.o
  .bss           0x00000000        0x0 ECUAL/source files/ICU.o
- .bss.counter   0x00000000        0x1 ECUAL/source files/ICU.o
  COMMON         0x00000000        0x2 ECUAL/source files/ICU.o
  .text          0x00000000        0x0 ECUAL/source files/motor.o
  .data          0x00000000        0x0 ECUAL/source files/motor.o
@@ -748,19 +747,19 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x23fb
+.debug_info     0x00000000     0x23ea
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_info    0x000004e6      0x316 App/sources/car_sm.o
  .debug_info    0x000007fc      0x303 App/sources/Steering.o
- .debug_info    0x00000aff      0x38b ECUAL/source files/ICU.o
- .debug_info    0x00000e8a      0x76c ECUAL/source files/motor.o
- .debug_info    0x000015f6      0x359 ECUAL/source files/Us.o
- .debug_info    0x0000194f       0xae main.o
- .debug_info    0x000019fd      0x222 MCAL/source files/Dio.o
- .debug_info    0x00001c1f       0xba MCAL/source files/Extint.o
- .debug_info    0x00001cd9      0x342 MCAL/source files/PWM.o
- .debug_info    0x0000201b      0x3e0 MCAL/source files/Timer.o
+ .debug_info    0x00000aff      0x37a ECUAL/source files/ICU.o
+ .debug_info    0x00000e79      0x76c ECUAL/source files/motor.o
+ .debug_info    0x000015e5      0x359 ECUAL/source files/Us.o
+ .debug_info    0x0000193e       0xae main.o
+ .debug_info    0x000019ec      0x222 MCAL/source files/Dio.o
+ .debug_info    0x00001c0e       0xba MCAL/source files/Extint.o
+ .debug_info    0x00001cc8      0x342 MCAL/source files/PWM.o
+ .debug_info    0x0000200a      0x3e0 MCAL/source files/Timer.o
 
 .debug_abbrev   0x00000000      0xe06
  *(.debug_abbrev)
@@ -803,28 +802,28 @@ END GROUP
  .debug_frame   0x0000027c       0x9c MCAL/source files/PWM.o
  .debug_frame   0x00000318       0xc8 MCAL/source files/Timer.o
 
-.debug_str      0x00000000      0x912
+.debug_str      0x00000000      0x90a
  *(.debug_str)
  .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_str     0x00000196      0x218 App/sources/car_sm.o
                                 0x24c (size before relaxing)
  .debug_str     0x000003ae       0xa2 App/sources/Steering.o
                                 0x222 (size before relaxing)
- .debug_str     0x00000450      0x19e ECUAL/source files/ICU.o
-                                0x326 (size before relaxing)
- .debug_str     0x000005ee      0x101 ECUAL/source files/motor.o
+ .debug_str     0x00000450      0x196 ECUAL/source files/ICU.o
+                                0x31e (size before relaxing)
+ .debug_str     0x000005e6      0x101 ECUAL/source files/motor.o
                                 0x2bd (size before relaxing)
- .debug_str     0x000006ef       0x49 ECUAL/source files/Us.o
+ .debug_str     0x000006e7       0x49 ECUAL/source files/Us.o
                                 0x28f (size before relaxing)
- .debug_str     0x00000738       0x11 main.o
+ .debug_str     0x00000730       0x11 main.o
                                 0x178 (size before relaxing)
- .debug_str     0x00000749       0x51 MCAL/source files/Dio.o
+ .debug_str     0x00000741       0x51 MCAL/source files/Dio.o
                                 0x1e7 (size before relaxing)
- .debug_str     0x0000079a       0x1e MCAL/source files/Extint.o
+ .debug_str     0x00000792       0x1e MCAL/source files/Extint.o
                                 0x1a8 (size before relaxing)
- .debug_str     0x000007b8       0x8c MCAL/source files/PWM.o
+ .debug_str     0x000007b0       0x8c MCAL/source files/PWM.o
                                 0x246 (size before relaxing)
- .debug_str     0x00000844       0xce MCAL/source files/Timer.o
+ .debug_str     0x0000083c       0xce MCAL/source files/Timer.o
                                 0x2d1 (size before relaxing)
 
 .debug_loc      0x00000000     0x2031

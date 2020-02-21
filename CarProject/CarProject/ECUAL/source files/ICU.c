@@ -18,7 +18,7 @@ volatile uint8_t ICU_Edge_Status = wait_Rising;
 
 uint16_t value=0;
 Icu_cfg_s ICU_CFG_S;
-static volatile uint8_t counter=0;
+
 
 
 
