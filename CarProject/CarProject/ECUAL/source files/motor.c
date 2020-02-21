@@ -9,6 +9,11 @@ DIO_Cfg_s DIO_Cfg_M1B;
 DIO_Cfg_s DIO_Cfg_M2A;
 DIO_Cfg_s DIO_Cfg_M2B;
 
+
+//PWM Structures
+Pwm_Cfg_s  Pwm_Cfg_PWM_1A;
+Pwm_Cfg_s  Pwm_Cfg_PWM_1B;
+
 /**
  * Func			: Motor_Init
  * Input		: motorNumber
@@ -46,17 +51,32 @@ DIO_Cfg_s DIO_Cfg_M2B;
 	 DIO_Cfg_M2B.dir =OUTPUT;
 	 DIO_Cfg_M2B.pins = MOTOR_OUT_2B_BIT;
 	 
+	 //initialize PWM structure
+	 Pwm_Cfg_PWM_1A.Channel   = PWM_CH1A;
+	 Pwm_Cfg_PWM_1A.Prescaler = T1_PRESCALER_1024;
+
+	 Pwm_Cfg_PWM_1B.Channel   = PWM_CH1B;
+	 Pwm_Cfg_PWM_1B.Prescaler = T1_PRESCALER_1024;
+	 
+	 
+	 
+	 
+	 
 	 switch (Motor_Number)
 	 {
 	 case MOTOR_1:
 		DIO_init(&DIO_Cfg_M1);
 		DIO_init(&DIO_Cfg_M1A);
 		DIO_init(&DIO_Cfg_M1B);
+		//Initialize PWM
+		Pwm_Init(&Pwm_Cfg_PWM_1A);
 	 	break;
 	 case MOTOR_2:
 		 DIO_init(&DIO_Cfg_M2);
 		 DIO_init(&DIO_Cfg_M2A);
 		 DIO_init(&DIO_Cfg_M2B);
+		 //Initialize PWM
+		 Pwm_Init(&Pwm_Cfg_PWM_1B);
 		 break;	 
 	 default:
 		 Err_Status = E_NOK;	 

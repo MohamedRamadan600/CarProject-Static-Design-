@@ -1,18 +1,5 @@
 #include "Steering.h"
 
-
-
-
-
-//Timer structures
-Timer_Cfg_S Cfg_S_T2;
-Timer_Cfg_S Cfg_S_T0;
-Timer_Cfg_S Cfg_S_T1;
-
-//PWM Structures
-Pwm_Cfg_s  Pwm_Cfg_PWM_1A;
-Pwm_Cfg_s  Pwm_Cfg_PWM_1B;
-
 //ICU structures
 Icu_cfg_s Icu_cfg_INT2;
 
@@ -34,17 +21,6 @@ Icu_cfg_s Icu_cfg_INT2;
 uint8_t Steering_Init(void){
 	uint8_t Err_Status = 0;
 	Err_Status =E_OK;
-	
-	//initialize PWM structure
-	Pwm_Cfg_PWM_1A.Channel   = PWM_CH1A;
-	Pwm_Cfg_PWM_1A.Prescaler = T1_PRESCALER_1024;
-
-	Pwm_Cfg_PWM_1B.Channel   = PWM_CH1B;
-	Pwm_Cfg_PWM_1B.Prescaler = T1_PRESCALER_1024;
-	
-	//Initialize PWM
-	Pwm_Init(&Pwm_Cfg_PWM_1A);
-	Pwm_Init(&Pwm_Cfg_PWM_1B);
 	
 	//Initialize Motor
 	Motor_Init(MOTOR_1);

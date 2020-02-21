@@ -14,8 +14,6 @@
 
 #include "std_types.h"
 #include "motor.h"
-#include "Timer.h"
-#include "PWM.h"
 #include "ICU.h"
 
 /*

@@ -41,21 +41,18 @@ Common symbol       size              file
 Icu_cfg_INT2        0x2               App/sources/Steering.o
 prescaler_Timer0    0x2               MCAL/source files/Timer.o
 DIO_Cfg_M2          0x3               ECUAL/source files/motor.o
-Pwm_Cfg_PWM_1B      0x2               App/sources/Steering.o
+Pwm_Cfg_PWM_1B      0x2               ECUAL/source files/motor.o
 Icu_cfg_US          0x2               ECUAL/source files/Us.o
 prescaler_Timer2    0x2               MCAL/source files/Timer.o
-Cfg_S_T1            0x4               App/sources/Steering.o
 DIO_Cfg_S_PWM1_B    0x3               MCAL/source files/PWM.o
 DIO_Cfg_M2A         0x3               ECUAL/source files/motor.o
 DIO_Cfg_US_E        0x3               ECUAL/source files/Us.o
 DIO_Cfg_M1B         0x3               ECUAL/source files/motor.o
-Pwm_Cfg_PWM_1A      0x2               App/sources/Steering.o
+Pwm_Cfg_PWM_1A      0x2               ECUAL/source files/motor.o
 DIO_Cfg_S_PWM1_A    0x3               MCAL/source files/PWM.o
 DIO_Cfg_M1          0x3               ECUAL/source files/motor.o
-Cfg_S_T0            0x4               App/sources/Steering.o
 DIO_Cfg_M2B         0x3               ECUAL/source files/motor.o
 DIO_Cfg_S_PWM2      0x3               MCAL/source files/PWM.o
-Cfg_S_T2            0x4               App/sources/Steering.o
 prescaler_Timer1    0x2               MCAL/source files/Timer.o
 DIO_Cfg_M1A         0x3               ECUAL/source files/motor.o
 ICU_CFG_S           0x2               ECUAL/source files/ICU.o
@@ -72,6 +69,7 @@ Discarded input sections
  .text          0x00000000        0x0 App/sources/Steering.o
  .data          0x00000000        0x0 App/sources/Steering.o
  .bss           0x00000000        0x0 App/sources/Steering.o
+ COMMON         0x00000000        0x2 App/sources/Steering.o
  .text          0x00000000        0x0 ECUAL/source files/ICU.o
  .data          0x00000000        0x0 ECUAL/source files/ICU.o
  .bss           0x00000000        0x0 ECUAL/source files/ICU.o
@@ -443,23 +441,23 @@ END GROUP
                 0x000000a6       0x82 App/sources/car_sm.o
                 0x000000a6                Car_SM_Update
  .text.Steering_Init
-                0x00000128       0x46 App/sources/Steering.o
+                0x00000128       0x20 App/sources/Steering.o
                 0x00000128                Steering_Init
  .text.Steering_SteerCar
-                0x0000016e       0xa4 App/sources/Steering.o
-                0x0000016e                Steering_SteerCar
+                0x00000148       0xa4 App/sources/Steering.o
+                0x00000148                Steering_SteerCar
  .text.Icu_Init
-                0x00000212       0x78 ECUAL/source files/ICU.o
-                0x00000212                Icu_Init
+                0x000001ec       0x78 ECUAL/source files/ICU.o
+                0x000001ec                Icu_Init
  .text.Icu_ReadTime
-                0x0000028a       0xc2 ECUAL/source files/ICU.o
-                0x0000028a                Icu_ReadTime
+                0x00000264       0xc2 ECUAL/source files/ICU.o
+                0x00000264                Icu_ReadTime
  .text.__vector_3
-                0x0000034c       0x3a ECUAL/source files/ICU.o
-                0x0000034c                __vector_3
+                0x00000326       0x3a ECUAL/source files/ICU.o
+                0x00000326                __vector_3
  .text.Motor_Init
-                0x00000386       0x90 ECUAL/source files/motor.o
-                0x00000386                Motor_Init
+                0x00000360       0xb6 ECUAL/source files/motor.o
+                0x00000360                Motor_Init
  .text.Motor_Direction
                 0x00000416       0xd2 ECUAL/source files/motor.o
                 0x00000416                Motor_Direction
@@ -608,7 +606,7 @@ END GROUP
                 0x00800062                _edata = .
                 0x00800062                PROVIDE (__data_end, .)
 
-.bss            0x00800062       0x43
+.bss            0x00800062       0x35
                 0x00800062                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
@@ -620,42 +618,37 @@ END GROUP
  .bss.Icu_Time  0x00800065        0x2 ECUAL/source files/Us.o
                 0x00800065                Icu_Time
  *(COMMON)
- COMMON         0x00800067       0x12 App/sources/Steering.o
-                0x00800067                Icu_cfg_INT2
-                0x00800069                Pwm_Cfg_PWM_1B
-                0x0080006b                Cfg_S_T1
-                0x0080006f                Pwm_Cfg_PWM_1A
-                0x00800071                Cfg_S_T0
-                0x00800075                Cfg_S_T2
- COMMON         0x00800079       0x12 ECUAL/source files/motor.o
-                0x00800079                DIO_Cfg_M2
-                0x0080007c                DIO_Cfg_M2A
-                0x0080007f                DIO_Cfg_M1B
-                0x00800082                DIO_Cfg_M1
-                0x00800085                DIO_Cfg_M2B
-                0x00800088                DIO_Cfg_M1A
- COMMON         0x0080008b        0x8 ECUAL/source files/Us.o
-                0x0080008b                Icu_cfg_US
-                0x0080008d                DIO_Cfg_US_E
-                0x00800090                DIO_Cfg_US_T
- COMMON         0x00800093        0xc MCAL/source files/PWM.o
-                0x00800093                DIO_Cfg_S_PWM1_B
-                0x00800096                DIO_Cfg_S_PWM1_A
-                0x00800099                DIO_Cfg_S_PWM2
-                0x0080009c                DIO_Cfg_S_PWM0
- COMMON         0x0080009f        0x6 MCAL/source files/Timer.o
-                0x0080009f                prescaler_Timer0
-                0x008000a1                prescaler_Timer2
-                0x008000a3                prescaler_Timer1
-                0x008000a5                PROVIDE (__bss_end, .)
+ COMMON         0x00800067       0x16 ECUAL/source files/motor.o
+                0x00800067                DIO_Cfg_M2
+                0x0080006a                Pwm_Cfg_PWM_1B
+                0x0080006c                DIO_Cfg_M2A
+                0x0080006f                DIO_Cfg_M1B
+                0x00800072                Pwm_Cfg_PWM_1A
+                0x00800074                DIO_Cfg_M1
+                0x00800077                DIO_Cfg_M2B
+                0x0080007a                DIO_Cfg_M1A
+ COMMON         0x0080007d        0x8 ECUAL/source files/Us.o
+                0x0080007d                Icu_cfg_US
+                0x0080007f                DIO_Cfg_US_E
+                0x00800082                DIO_Cfg_US_T
+ COMMON         0x00800085        0xc MCAL/source files/PWM.o
+                0x00800085                DIO_Cfg_S_PWM1_B
+                0x00800088                DIO_Cfg_S_PWM1_A
+                0x0080008b                DIO_Cfg_S_PWM2
+                0x0080008e                DIO_Cfg_S_PWM0
+ COMMON         0x00800091        0x6 MCAL/source files/Timer.o
+                0x00800091                prescaler_Timer0
+                0x00800093                prescaler_Timer2
+                0x00800095                prescaler_Timer1
+                0x00800097                PROVIDE (__bss_end, .)
                 0x00000f7e                __data_load_start = LOADADDR (.data)
                 0x00000f80                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008000a5        0x0
+.noinit         0x00800097        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x008000a5                _end = .
+                0x00800097                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -755,19 +748,19 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x2481
+.debug_info     0x00000000     0x23fb
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_info    0x000004e6      0x316 App/sources/car_sm.o
- .debug_info    0x000007fc      0x426 App/sources/Steering.o
- .debug_info    0x00000c22      0x38b ECUAL/source files/ICU.o
- .debug_info    0x00000fad      0x6cf ECUAL/source files/motor.o
- .debug_info    0x0000167c      0x359 ECUAL/source files/Us.o
- .debug_info    0x000019d5       0xae main.o
- .debug_info    0x00001a83      0x222 MCAL/source files/Dio.o
- .debug_info    0x00001ca5       0xba MCAL/source files/Extint.o
- .debug_info    0x00001d5f      0x342 MCAL/source files/PWM.o
- .debug_info    0x000020a1      0x3e0 MCAL/source files/Timer.o
+ .debug_info    0x000007fc      0x303 App/sources/Steering.o
+ .debug_info    0x00000aff      0x38b ECUAL/source files/ICU.o
+ .debug_info    0x00000e8a      0x76c ECUAL/source files/motor.o
+ .debug_info    0x000015f6      0x359 ECUAL/source files/Us.o
+ .debug_info    0x0000194f       0xae main.o
+ .debug_info    0x000019fd      0x222 MCAL/source files/Dio.o
+ .debug_info    0x00001c1f       0xba MCAL/source files/Extint.o
+ .debug_info    0x00001cd9      0x342 MCAL/source files/PWM.o
+ .debug_info    0x0000201b      0x3e0 MCAL/source files/Timer.o
 
 .debug_abbrev   0x00000000      0xe06
  *(.debug_abbrev)
@@ -783,19 +776,19 @@ END GROUP
  .debug_abbrev  0x00000bec      0x10c MCAL/source files/PWM.o
  .debug_abbrev  0x00000cf8      0x10e MCAL/source files/Timer.o
 
-.debug_line     0x00000000     0x1673
+.debug_line     0x00000000     0x165e
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x115 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_line    0x00000115      0x19c App/sources/car_sm.o
- .debug_line    0x000002b1      0x19e App/sources/Steering.o
- .debug_line    0x0000044f      0x22f ECUAL/source files/ICU.o
- .debug_line    0x0000067e      0x358 ECUAL/source files/motor.o
- .debug_line    0x000009d6      0x19a ECUAL/source files/Us.o
- .debug_line    0x00000b70       0x64 main.o
- .debug_line    0x00000bd4      0x2dc MCAL/source files/Dio.o
- .debug_line    0x00000eb0       0x91 MCAL/source files/Extint.o
- .debug_line    0x00000f41      0x333 MCAL/source files/PWM.o
- .debug_line    0x00001274      0x3ff MCAL/source files/Timer.o
+ .debug_line    0x000002b1      0x165 App/sources/Steering.o
+ .debug_line    0x00000416      0x22f ECUAL/source files/ICU.o
+ .debug_line    0x00000645      0x37c ECUAL/source files/motor.o
+ .debug_line    0x000009c1      0x19a ECUAL/source files/Us.o
+ .debug_line    0x00000b5b       0x64 main.o
+ .debug_line    0x00000bbf      0x2dc MCAL/source files/Dio.o
+ .debug_line    0x00000e9b       0x91 MCAL/source files/Extint.o
+ .debug_line    0x00000f2c      0x333 MCAL/source files/PWM.o
+ .debug_line    0x0000125f      0x3ff MCAL/source files/Timer.o
 
 .debug_frame    0x00000000      0x3e0
  *(.debug_frame)
@@ -810,28 +803,28 @@ END GROUP
  .debug_frame   0x0000027c       0x9c MCAL/source files/PWM.o
  .debug_frame   0x00000318       0xc8 MCAL/source files/Timer.o
 
-.debug_str      0x00000000      0x92d
+.debug_str      0x00000000      0x912
  *(.debug_str)
  .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_str     0x00000196      0x218 App/sources/car_sm.o
                                 0x24c (size before relaxing)
- .debug_str     0x000003ae      0x148 App/sources/Steering.o
-                                0x2da (size before relaxing)
- .debug_str     0x000004f6      0x144 ECUAL/source files/ICU.o
+ .debug_str     0x000003ae       0xa2 App/sources/Steering.o
+                                0x222 (size before relaxing)
+ .debug_str     0x00000450      0x19e ECUAL/source files/ICU.o
                                 0x326 (size before relaxing)
- .debug_str     0x0000063a       0xd0 ECUAL/source files/motor.o
-                                0x27a (size before relaxing)
- .debug_str     0x0000070a       0x49 ECUAL/source files/Us.o
+ .debug_str     0x000005ee      0x101 ECUAL/source files/motor.o
+                                0x2bd (size before relaxing)
+ .debug_str     0x000006ef       0x49 ECUAL/source files/Us.o
                                 0x28f (size before relaxing)
- .debug_str     0x00000753       0x11 main.o
+ .debug_str     0x00000738       0x11 main.o
                                 0x178 (size before relaxing)
- .debug_str     0x00000764       0x51 MCAL/source files/Dio.o
+ .debug_str     0x00000749       0x51 MCAL/source files/Dio.o
                                 0x1e7 (size before relaxing)
- .debug_str     0x000007b5       0x1e MCAL/source files/Extint.o
+ .debug_str     0x0000079a       0x1e MCAL/source files/Extint.o
                                 0x1a8 (size before relaxing)
- .debug_str     0x000007d3       0x8c MCAL/source files/PWM.o
+ .debug_str     0x000007b8       0x8c MCAL/source files/PWM.o
                                 0x246 (size before relaxing)
- .debug_str     0x0000085f       0xce MCAL/source files/Timer.o
+ .debug_str     0x00000844       0xce MCAL/source files/Timer.o
                                 0x2d1 (size before relaxing)
 
 .debug_loc      0x00000000     0x2031

@@ -24,22 +24,13 @@
 #define		TIMER_CH1					1
 #define		TIMER_CH2					2
 
-#define		TIMER_MODE					0
-#define		COUNTER_RISING_MODE			1
-#define		COUNTER_FALLING_MODE		2
+#define		TIMER_MODE					     0
+#define		COUNTER_RISING_MODE		      	 1
+#define		COUNTER_FALLING_MODE		     2
 
-#define		TIMER_POLLING_MODE				0
-#define		TIMER_INTERRUPT_MODE			1
-/*
-#define		TIMER_NO_CLOCK					0
-#define		TIMER_PRESCALER_NO				1
-#define		TIMER_PRESCALER_8				2
-#define		TIMER_PRESCALER_32				3
-#define		TIMER_PRESCALER_64				4
-#define		TIMER_PRESCALER_128				5
-#define		TIMER_PRESCALER_256				6
-#define		TIMER_PRESCALER_1024			7
-*/
+#define		TIMER_POLLING_MODE				 0
+#define		TIMER_INTERRUPT_MODE			 1
+
 #define		T0_NO_CLOCK						 0
 #define		T0_PRESCALER_NO					0x01
 #define		T0_PRESCALER_8					0x02
@@ -57,7 +48,9 @@
 #define		T2_NO_CLOCK						 0
 #define		T2_PRESCALER_NO					0x01
 #define		T2_PRESCALER_8					0x02
-#define		T2_PRESCALER_64                 0x03
+#define		T2_PRESCALER_32                 0x03
+#define		T2_PRESCALER_64                 0x04
+#define		T2_PRESCALER_128                 0x05
 #define		T2_PRESCALER_256                0x06
 #define		T2_PRESCALER_1024               0x07
 

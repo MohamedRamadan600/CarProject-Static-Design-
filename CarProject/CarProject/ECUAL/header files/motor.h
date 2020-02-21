@@ -12,6 +12,7 @@
 #include "motorConfig.h"
 #include "std_types.h"
 #include "DIO.h"
+#include "Timer.h"
 
 /*********************************************
  *				Defines  					 *

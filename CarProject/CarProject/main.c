@@ -7,16 +7,8 @@
 /************************************************************************/
 /*				 INCLUDES			        */
 /************************************************************************/
-
-#include "Timer.h"
-#include "DIO.h"
-#include "util/delay.h"
-#include "PWM.h"
-#include "motor.h"
-#include "ICU.h"
-#include "Us.h"
 #include "car_sm.h"
-#include "Steering.h"
+
 
 
 int main(void)

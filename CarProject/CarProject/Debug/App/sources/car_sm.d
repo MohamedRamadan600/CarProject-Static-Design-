@@ -4,7 +4,6 @@ App/sources/car_sm.d App/sources/car_sm.o: ../App/sources/car_sm.c \
  ../ECUAL/header\ files/motor.h ../ECUAL/header\ files/motorConfig.h \
  ../MCAL/header\ files/DIO.h ../MCAL/header\ files/std_types.h \
  ../MCAL/header\ files/registers.h ../MCAL/header\ files/Timer.h \
- ../MCAL/header\ files/PWM.h ../MCAL/header\ files/DIO.h \
  ../ECUAL/header\ files/ICU.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -32,10 +31,6 @@ App/sources/car_sm.d App/sources/car_sm.o: ../App/sources/car_sm.c \
 ../MCAL/header\ files/registers.h:
 
 ../MCAL/header\ files/Timer.h:
-
-../MCAL/header\ files/PWM.h:
-
-../MCAL/header\ files/DIO.h:
 
 ../ECUAL/header\ files/ICU.h:
 
